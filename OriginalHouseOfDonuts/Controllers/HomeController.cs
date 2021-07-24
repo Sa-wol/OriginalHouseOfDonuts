@@ -23,7 +23,27 @@ namespace OriginalHouseOfDonuts.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        public IActionResult History()
+        {
+            return View();
+        }
+
+        public IActionResult Careers()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Order()
         {
             return View();
         }
