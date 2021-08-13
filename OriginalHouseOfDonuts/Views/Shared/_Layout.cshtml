@@ -6,29 +6,46 @@
     <title>@ViewData["Title"] - Original House Of Donuts</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    <header>
-        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OriginalHouseOfDonuts</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<body class="modal-loaded">
+    <div id="ohod-app" class="ohod-site-wrapper">
+        <header class="site-header">
+            <div class="ohod-header">
+                <div class="ohod-header-left">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/img/houselogo.png" height="87" width="99" /></a>
+                </div>
+                <div class="ohod-header-center">
+                    <nav class="ohod-nav">
+                        <ul class="ohod-items">
+                            <li class="ohod-item">
+                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="ohod-item">
+                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
+                            </li>
+                            <li class="ohod-item">
+                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="History">History</a>
+                            </li>
+                            <li class="ohod-item">
+                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Careers">Careers</a>
+                            </li>
+                            <li class="ohod-item">
+                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="ohod-header-right">
+                    <div class="ohod-order">
+                        <a class="ohod-order-link" asp-area="" asp-controller="Home" asp-action="Order">Order Now</a>
+                    </div>
                 </div>
             </div>
-        </nav>*@
-    </header>
+        </header>
+    </div>
+    
     <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
