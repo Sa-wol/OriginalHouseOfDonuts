@@ -20,16 +20,9 @@ namespace OriginalHouseOfDonuts.Controllers
             _productContext = productContext;
         }
         
-        /// <summary>
-        /// Displays list of products
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public IActionResult Order()
+        public IActionResult Index()
         {
-            List<Product> products = ((List<Product>)(from p in _productContext.Products
-                                                      select p));
-            return View(products);
+            return View();
         }
     }
 }

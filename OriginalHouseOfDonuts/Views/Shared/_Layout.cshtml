@@ -20,27 +20,29 @@
                     <nav class="ohod-nav">
                         <ul class="ohod-items">
                             <li class="ohod-item">
-                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                @Html.ActionLink("Home", "Index", "Home")
                             </li>
                             <li class="ohod-item">
-                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
+                                @Html.ActionLink("Menu", "Menu", "Home")
                             </li>
                             <li class="ohod-item">
-                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="History">History</a>
+                                @Html.ActionLink("History", "History", "Home")
                             </li>
                             <li class="ohod-item">
-                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Careers">Careers</a>
+                                @Html.ActionLink("Careers", "Careers", "Home")
                             </li>
                             <li class="ohod-item">
-                                <a class="ohod-nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                                @Html.ActionLink("Contact", "Contact", "Home")
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="ohod-header-right">
-                    <div class="ohod-order">
-                        <a class="ohod-order-link" asp-area="" asp-controller="Product" asp-action="Order">Order Now</a>
-                    </div>
+                    <ul class="ohod-items">
+                        <li class="ohod-item-right">
+                            @Html.ActionLink("Order", "Index", "Product")
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>
