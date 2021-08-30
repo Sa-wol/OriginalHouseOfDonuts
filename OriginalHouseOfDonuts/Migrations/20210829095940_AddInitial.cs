@@ -2,7 +2,7 @@
 
 namespace OriginalHouseOfDonuts.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AddInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,8 +12,8 @@ namespace OriginalHouseOfDonuts.Migrations
                 {
                     ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: false),
+                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ItemPrice = table.Column<double>(type: "float", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
