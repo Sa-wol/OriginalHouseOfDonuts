@@ -3,16 +3,19 @@
     box-sizing: border-box;
 }
 
-html{
+html, body {
     height: 100%;
-    width: 100%;
 }
 
 body {
     background: #F0803C;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.6em;
     line-height: 1.4;
+}
+
+main {
+    display: block;
 }
 
 
@@ -101,7 +104,6 @@ a {
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
-    margin-right: 50px;
     padding-left: 1.5rem;
 }
 
@@ -149,7 +151,7 @@ a {
 }
 
 
-/* slider css */
+/* slider css
 .ohod-carousel-content {
     flex: 1;
 }
@@ -159,7 +161,7 @@ a {
     height: calc(100vh - 6rem);
     overflow: hidden;
     position: relative;
-}
+} */
 
 .container-fluid {
     padding: 0 !important;

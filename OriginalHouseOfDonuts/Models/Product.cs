@@ -20,5 +20,7 @@ namespace OriginalHouseOfDonuts.Models
         public double ItemPrice { get; set; }
 
         public string Category { get; set; }
+
+        public string Photo { get; set; }
     }
 }
