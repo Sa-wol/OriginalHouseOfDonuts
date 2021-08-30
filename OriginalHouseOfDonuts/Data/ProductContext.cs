@@ -9,8 +9,6 @@ namespace OriginalHouseOfDonuts.Data
 {
     public class ProductContext : DbContext
     {
-        internal readonly object Product;
-
         public ProductContext(DbContextOptions<ProductContext> options) : base(options)
         {
         }
