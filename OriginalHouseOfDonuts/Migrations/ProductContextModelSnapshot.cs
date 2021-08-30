@@ -28,11 +28,11 @@ namespace OriginalHouseOfDonuts.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("ItemPrice")
                         .HasColumnType("float");
-
-                    b.Property<string>("ItemTitle")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
 

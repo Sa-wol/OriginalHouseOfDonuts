@@ -15,11 +15,27 @@ namespace OriginalHouseOfDonuts.Controllers
     /// </summary>
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly ProductContext ctx;
+
+        public ProductController(ProductContext context)
         {
-            ProductModel productModel = new ProductModel();
-            ViewBag.products = productModel.findAll();
-            return View();
+            ctx = context;
+        }
+
+        public async Task<IActionResult> Index(int? id)
+        {
+            int pageNum = id ?? 1;
+            const int PageSize = 3;
+            ViewData["CurrentPage"] = pageNum;
+
+            int numProducts = await ProductDb.GetTotalProductsAsync(ctx);
+            int totalPages = (int)Math.Ceiling((double)numProducts / PageSize);
+            ViewData["MaxPage"] = totalPages;
+
+            List<Product> products = await ProductDb.GetProductsAsync(ctx, PageSize, pageNum);
+
+            // Send list of products to view to be displayed
+            return View(products);
         }
     }
 }

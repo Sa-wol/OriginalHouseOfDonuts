@@ -9,8 +9,8 @@ using OriginalHouseOfDonuts.Data;
 namespace OriginalHouseOfDonuts.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20210822214140_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210829095940_AddInitial")]
+    partial class AddInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,11 +30,11 @@ namespace OriginalHouseOfDonuts.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Title")
+                    b.Property<string>("ItemName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("ItemPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("ProductId");
 
