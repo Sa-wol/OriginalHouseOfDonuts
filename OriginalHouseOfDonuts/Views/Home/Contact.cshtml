@@ -1,5 +1,100 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Contact";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+    @*Google maps API*@
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+        const CONFIGURATION = {
+            "locations": [
+                { "title": "9638 Gravelly Lake Dr SW", "address1": "9638 Gravelly Lake Dr SW", "address2": "Tacoma, WA 98499, USA", "coords": { "lat": 47.16907374659551, "lng": -122.5205023490738 }, "placeId": "ChIJGdeHh90AkVQRwkTdsnv9a20" },
+                { "title": "3813 Pacific Ave SE", "address1": "3813 Pacific Ave SE", "address2": "Olympia, WA 98503, USA", "coords": { "lat": 47.03994475671172, "lng": -122.83807747976226 }, "placeId": "ChIJddnMxzULkVQR4SdMy4hcMUA" }
+            ],
+            "mapOptions": { "center": { "lat": 38.0, "lng": -100.0 }, "fullscreenControl": true, "mapTypeControl": false, "streetViewControl": false, "zoom": 4, "zoomControl": true, "maxZoom": 17 },
+            "mapsApiKey": "AIzaSyDRmh6A2Rdp6bGVYVHL8IpWr0dfIXHKnHE"
+        };
+
+        function initMap() {
+            new LocatorPlus(CONFIGURATION);
+        }
+    </script>
+    <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
+        {{#each locations}}
+        <li class="location-result" data-location-index="{{index}}">
+            <button class="select-location">
+                <h2 class="name">{{title}}</h2>
+            </button>
+            <div class="address">{{address1}}<br>{{address2}}</div>
+        </li>
+        {{/each}}
+    </script>
+
+</head>
+<body>
+    @*Div containers for location address, hours, and map*@
+    <div class="row contact-page">
+        <div class="col-md-6 text-md-center">
+            <h5>Lakewood</h5>
+        </div>
+        <div class="col-md-6 text-md-center">
+            <h5>Lacey</h5>
+        </div>
+        <div class="col-md-3">
+            <p class="lakewood-address">
+                9638 Gravelly Lake Drive SW<br />
+                Lakewood, WA 98499<br />
+                253-588-2647
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="lakewood-hours">
+                Hours: <br />
+                6 AM - 6 PM <br />
+                7 Days a Week
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="lacey-address">
+                3813 Pacific Ave SE <br />
+                Lacey WA, 98503 <br />
+                360-491-0590
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="lacey-hours">
+                Hours: <br />
+                6 AM - 6 PM <br />
+                7 Days a Week
+            </p>
+        </div>
+
+        @*Google maps API*@
+        <div class="col-sm-12">
+            <div id="map-container">
+                <div id="map"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRmh6A2Rdp6bGVYVHL8IpWr0dfIXHKnHE&callback=initMap&libraries=places,geometry&channel=GMPSB_locatorplus_v4_cA" async defer></script>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                interval: 4000
+            })
+        });
+    </script>
+</body>
+</html>
