@@ -4,39 +4,40 @@
     ViewData["Title"] = "Online Orders";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row main-body">
+    <div class="col-md-2">Add something here later</div>
+    <div class="col-md-10">
+        <div class="text-body text-center">
+            If you wish to order something not present please call us at: <br />
+            <div class="row ohod-location">
+                <div class="col-md-6"> Lakewood: <br /> 253-588-2647 </div>
+                <div class="col-md-6"> Tacoma: <br /> 253-314-5702 </div>
+            </div>               
+            <br />
+            <br />
+            <div class="alert-warning food-warning">
+                *We do require Pre-Payment for phone orders of 3 dozen or more.<br /><br />
+                Online ordering available at our Lakewood store. <br />
+                To ensure you receive the donuts you want, we recommend calling and ordering in advance.
+            </div>
+        </div>
+
+
+        <div class="card-deck">
+            @foreach (var p in Model)
+            {
+                <div class="card m-1 p-1 border-primary">
+                    <div class="bg-faded p-1 text-black-50">
+                        <h4>
+                            @Html.DisplayFor(modelItem => p.ItemName)
+                            <span class="badge badge-pill badge-primary" style="float:right">
+                                <small>@p.ItemPrice.ToString("c")</small>
+                            </span>
+                        </h4>
+                    </div>
+                    <div class="card-body p-1 text-black-50">@p.Description</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
